@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant Server
+    participant Ingestion
+    participant Detection
+    participant Alerting
+    participant Response
+
+    Server->>Ingestion: SSH Failed Login Logs
+    Ingestion->>Detection: Parsed Events
+    Detection->>Detection: Count Attempts per IP
+    Detection-->>Alerting: Brute Force Alert (T1110)
+    Alerting-->>Response: Block IP (Simulated)
