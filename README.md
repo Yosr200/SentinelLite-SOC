@@ -52,6 +52,7 @@ Logs → Ingestion → Detection Rules → Alerts → Automated Response → Das
   "mitre_technique": "T1110",
   "status": "Open"
 }
+---
 ⚙️ Automated Response
 
 Current response actions:
