@@ -31,7 +31,13 @@ Logs → Ingestion → Detection Rules → Alerts → Automated Response → Das
 - **Dashboard**: Visualizes alerts and incidents (Flask)
 
 ---
-
+How to Run the Full SOC
+python run_soc.py
+cd dashboard
+python app.py
+Open:
+👉 http://127.0.0.1:5000
+---
 ## 🔍 Implemented Detections (v1)
 
 | Detection | Description | MITRE Technique |
