@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  soc-engine:
+    build: .
+    container_name: sentinel-soc-engine
+    volumes:
+      - ./alerts.json:/app/alerts.json
+      - ./sample_logs:/app/sample_logs
+
+  dashboard:
+    build: ./dashboard
+    container_name: sentinel-soc-dashboard
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./alerts.json:/dashboard/alerts.json
+    depends_on:
+      - soc-engine
