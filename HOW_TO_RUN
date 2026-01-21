@@ -1,0 +1,111 @@
+# How to Run SentinelLite-SOC
+
+🛡️ This guide explains how to run the **SentinelLite-SOC** platform on your machine, either **locally with Python** or **using Docker**.
+
+---
+
+## Prerequisites
+
+* Python 3.8 or higher
+* pip (Python package manager)
+* Docker & Docker Compose (optional, for containerized run)
+* Git (to clone the repository)
+
+---
+
+## 1️⃣ Running Locally with Python
+
+### Step 1: Clone the repository
+
+```bash
+git clone https://github.com/Yosr200/SentinelLite-SOC.git
+cd SentinelLite-SOC
+```
+
+### Step 2: Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 3: Run the SOC workflow
+
+This parses logs, detects brute-force attacks, generates alerts, and simulates responses.
+
+```bash
+python run_soc.py
+```
+
+### Step 4: Start the Flask dashboard
+
+```bash
+cd dashboard
+python app.py
+```
+
+### Step 5: Open the dashboard in your browser
+
+```
+http://127.0.0.1:5000
+```
+
+* You will see alerts generated from the sample logs.
+* Alerts include **detected brute-force attempts** and their **severity**.
+
+---
+
+## 2️⃣ Running with Docker (Recommended)
+
+### Step 1: Clone the repository
+
+```bash
+git clone https://github.com/Yosr200/SentinelLite-SOC.git
+cd SentinelLite-SOC
+```
+
+### Step 2: Build and start Docker containers
+
+```bash
+docker-compose up --build
+```
+
+* Starts two containers:
+
+  * **SOC engine** – runs detection and alert workflow
+  * **Dashboard** – Flask web interface
+
+### Step 3: Open the dashboard
+
+```
+http://localhost:5000
+```
+
+* Alerts update in real-time
+* Sample logs are preloaded for testing
+
+---
+
+## 3️⃣ Customizing Logs
+
+* Add your own logs to `sample_logs/` (e.g., `auth.log`)
+* Modify detection thresholds in `detections/brute_force_detector.py` if needed
+
+---
+
+## 4️⃣ Notes
+
+* Alerts are saved in `alerts.json`
+* Automated response (IP blocking) is **simulated only**; system firewall is not modified by default
+* To enable real blocking, edit `response/block_ip.py` and set `simulate=False`
+
+---
+
+## 5️⃣ Recommended Next Steps
+
+* Explore `docs/architecture.md` for the SOC architecture diagram
+* Modify detection rules to simulate other attack patterns
+* Use Docker for portability across environments
+
+---
+
+Enjoy testing your **SentinelLite-SOC** platform! 🛡️
