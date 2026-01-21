@@ -31,12 +31,51 @@ Logs → Ingestion → Detection Rules → Alerts → Automated Response → Das
 - **Dashboard**: Visualizes alerts and incidents (Flask)
 
 ---
-How to Run the Full SOC
-python run_soc.py
-cd dashboard
-python app.py
-Open:
-👉 http://127.0.0.1:5000
+## 🔹 Features
+
+- Log ingestion for Linux/SSH authentication logs
+- Brute-force detection using rule-based logic
+- Alerts mapped to **MITRE ATT&CK T1110 (Credential Access)**
+- Automated response simulation (IP blocking)
+- Flask-based SOC dashboard for monitoring alerts
+- Fully containerized with Docker and Docker Compose
+- Clear documentation and Mermaid diagrams for architecture
+
+---
+
+## 🔹 Technologies Used
+
+- **Python 3.11** – core logic, detection, alerting  
+- **Flask** – SOC dashboard  
+- **Docker / Docker Compose** – containerization  
+- **Mermaid** – architecture and flow diagrams  
+- **JSON** – alert storage
+
+---
+
+## 🔹 Project Structure
+
+```text
+SentinelLite-SOC/
+├── ingestion/                # Log parsing scripts
+│   └── ssh_logs.py
+├── detections/               # Detection logic
+│   └── brute_force_detector.py
+├── alerts/                   # Alert management
+│   └── alert_manager.py
+├── response/                 # Automated response simulation
+│   └── block_ip.py
+├── dashboard/                # Flask dashboard
+│   ├── app.py
+│   └── templates/
+│       └── index.html
+├── sample_logs/              # Example log files
+│   └── auth.log
+├── docs/                     # Diagrams & documentation
+│   └── architecture.md
+├── run_soc.py                # Orchestrator for SOC workflow
+├── requirements.txt          # Python dependencies
+└── README.md                 # This file
 ---
 ## 🔍 Implemented Detections (v1)
 
