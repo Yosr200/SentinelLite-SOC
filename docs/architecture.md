@@ -1,3 +1,4 @@
+
 flowchart LR
     A[Log Sources<br/>SSH / Auth Logs]
     B[Log Ingestion]
