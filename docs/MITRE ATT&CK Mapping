@@ -1,0 +1,7 @@
+graph TD
+    A[SSH Brute Force]
+    B[Credential Access]
+    C[T1110 - Brute Force]
+
+    A --> B
+    B --> C
