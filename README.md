@@ -53,32 +53,4 @@ Logs → Ingestion → Detection Rules → Alerts → Automated Response → Das
   "status": "Open"
 }
 ---
-⚙️ Automated Response
 
-Current response actions:
-
-IP blocking using iptables (simulation mode)
-
-Incident report generation (JSON / Markdown)
-
-Future responses:
-
-User account lock
-
-Email / Slack notifications
-
-SOAR-style playbooks
-
-🛠 Technology Stack
-
-Python 3
-
-Regex-based log parsing
-
-YAML detection rules
-
-Flask (dashboard)
-
-Docker (planned)
-
-MITRE ATT&CK Framework
