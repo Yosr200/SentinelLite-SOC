@@ -1,4 +1,4 @@
-```mermaid
+
 sequenceDiagram
     participant Server
     participant Ingestion
@@ -11,4 +11,4 @@ sequenceDiagram
     Detection->>Detection: Count Attempts per IP
     Detection-->>Alerting: Brute Force Alert (T1110)
     Alerting-->>Response: Block IP (Simulated)
-```
+
